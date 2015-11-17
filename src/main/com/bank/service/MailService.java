@@ -1,4 +1,6 @@
-package com.bank.service.internal;
+package com.bank.service;
+
+import com.bank.service.mail.EmailSession;
 
 /**
  * Created by roofimon on 11/17/2015 AD.

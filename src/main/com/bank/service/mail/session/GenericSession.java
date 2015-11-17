@@ -1,7 +1,7 @@
-package com.bank.service.internal;
+package com.bank.service.mail.session;
 
 import com.bank.domain.EmailAccount;
-import com.bank.domain.HotmailAccount;
+import com.bank.service.mail.EmailSession;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;

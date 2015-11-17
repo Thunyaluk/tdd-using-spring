@@ -1,15 +1,15 @@
-package com.bank.service.internal;
+package com.bank.service.mail.session;
 
-import com.bank.domain.GmailAccount;
+import com.bank.domain.EmailAccount;
 
 import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.internet.AddressException;
 import java.util.Properties;
 
-public class FakeSMTPSession extends GenericSession{
+public class FakeSMTPSession extends GenericSession {
         public FakeSMTPSession() throws AddressException, NoSuchProviderException {
-                super.account = new GmailAccount();
+                super.account = new EmailAccount();
                 super.host = "localhost";
                 Properties props = System.getProperties();
                 props.put("mail.smtp.starttls.enable", "true");

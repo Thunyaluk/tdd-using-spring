@@ -1,6 +1,7 @@
-package com.bank.service.internal;
+package com.bank.service.mail;
 
 import com.bank.domain.Email;
+import com.bank.service.MailService;
 
 import javax.mail.*;
 import javax.mail.internet.*;

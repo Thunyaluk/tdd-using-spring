@@ -1,5 +1,10 @@
 package com.bank.service.internal;
 
+import com.bank.service.MailService;
+import com.bank.service.mail.*;
+import com.bank.service.mail.session.FakeSMTPSession;
+import com.bank.service.mail.session.GenericSession;
+import com.bank.service.mail.session.HotmailSession;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.GreenMailUtil;
 import com.icegreen.greenmail.util.ServerSetup;
@@ -33,7 +38,6 @@ public class EmailServiceTests {
         gmailService.setSession(session);
         String[] recipients = {"roofimon@gmail.com"};
         gmailService.sendMail(recipients);
-        //assertEquals("Done", GreenMailUtil.getBody(greenMail.getReceivedMessages()[0]));
     }
     @Test
     public void testSendMail() throws AddressException, NoSuchProviderException {

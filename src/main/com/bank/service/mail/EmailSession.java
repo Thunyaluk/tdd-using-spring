@@ -1,4 +1,4 @@
-package com.bank.service.internal;
+package com.bank.service.mail;
 
 import com.bank.domain.GmailAccount;
 
