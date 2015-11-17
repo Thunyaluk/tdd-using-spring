@@ -74,6 +74,7 @@ public class DefaultTransferService implements TransferService {
         receipt.setFinalSourceAccount(srcAcct);
         receipt.setFinalDestinationAccount(dstAcct);
 
+
         return receipt;
     }
 }
