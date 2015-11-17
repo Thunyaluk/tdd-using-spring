@@ -2,14 +2,14 @@ package com.bank.service.internal;
 
 import org.junit.Test;
 
-public class EmailService {
+public class EmailServiceTests {
 
     @Test
     public void testSendMail(){
-        EmailSession session = new GmailSession();
-        HotmailSession hotmailSession = new HotmailSession();
+        EmailSession gmailSession = new GmailSession();
+        EmailSession hotmailSession = new HotmailSession();
         MailService gmailService = new GmailService();
-        gmailService.setSession(hotmailSession);
+        gmailService.setSession(gmailSession);
         String[] recipients = {"roofimon@gmail.com"};
         gmailService.sendMail(recipients);
     }
