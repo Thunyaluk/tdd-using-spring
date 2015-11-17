@@ -8,7 +8,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class GmailSession extends GenericSession {
-    public GmailSession() {
+    public GmailSession() throws NoSuchProviderException {
         super.account = new GmailAccount();
         super.host = "smtp.gmail.com";
         Properties props = System.getProperties();
@@ -19,5 +19,6 @@ public class GmailSession extends GenericSession {
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.auth", "true");
         this.session = Session.getDefaultInstance(props);
+        this.transport = session.getTransport("smtp");
     }
 }

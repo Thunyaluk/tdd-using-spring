@@ -12,7 +12,9 @@ import javax.mail.internet.MimeMessage;
 
 public class GenericSession implements EmailSession {
     protected Session session;
+    protected Transport transport;
     protected EmailAccount account;
+    protected int smtpPort = 587;
     protected String host;
 
     @Override
@@ -38,9 +40,8 @@ public class GenericSession implements EmailSession {
 
     @Override
     public void send(MimeMessage message) throws MessagingException {
-        Transport transport = session.getTransport("smtp");
         session.setDebug(true);
-        transport.connect(host, account.username, account.password);
+        transport.connect(host, smtpPort, account.username, account.password);
         transport.sendMessage(message, message.getAllRecipients());
         transport.close();
     }

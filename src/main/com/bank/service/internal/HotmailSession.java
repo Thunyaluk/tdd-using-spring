@@ -13,7 +13,7 @@ import java.util.Properties;
  * Created by roofimon on 11/17/2015 AD.
  */
 public class HotmailSession extends GenericSession {
-    public HotmailSession() {
+    public HotmailSession() throws NoSuchProviderException {
         super.host = "smtp.live.com";
         super.account = new HotmailAccount();
         Properties props = System.getProperties();
@@ -24,6 +24,7 @@ public class HotmailSession extends GenericSession {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         this.session = Session.getDefaultInstance(props);
+        this.transport = session.getTransport("smtp");
     }
 
 }

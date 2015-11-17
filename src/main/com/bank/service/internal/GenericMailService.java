@@ -5,7 +5,7 @@ import com.bank.domain.Email;
 import javax.mail.*;
 import javax.mail.internet.*;
 
-public class GmailService implements MailService {
+public class GenericMailService implements MailService {
     private EmailSession session;
 
     @Override
